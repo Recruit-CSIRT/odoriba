@@ -1,0 +1,431 @@
+<!--
+# Copyright (C) 2016- Tatsuya Ichida Recruit Technologies.
+# [original] this page is shown when analysis running. this is odoriba realtime view.
+# Ajax is used to reduce load time.
+# if you push "Finish Button" , redirect to finish.html
+# Change 127.0.0.1:8001 to your own.
+-->
+
+<script>setTimeout("location.reload()",60000);</script>
+
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<script type="text/javascript" src="/static/js/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.paging.min.js"></script>
+
+
+<p style="margin-bottom: 10px;"><img src="{% static "graphic/csirt_odoriba.png" %}" /></p>
+
+<script>
+function kakunin(){
+  ret = confirm("Jump to Realtime Analysis Finish page, are you OK ？");
+  if (ret == true){
+    location.href = "http://127.0.0.1:8001/analysis/finish/";
+  }
+}
+</script>
+
+<script type="text/javascript">
+DD = new Date();
+Hours = DD.getHours();
+Minutes = DD.getMinutes();
+Seconds = DD.getSeconds();
+document.write("Privious Reload Time:　　",Hours," : ",Minutes," : ",Seconds," .");
+</script>
+
+<p><font size="5" color="#ff0000"> Realtime Analysis Result ( 60s reload )</font></p>
+<p><input type="button" value="Finish Button" onclick="kakunin()"></p>
+
+<ul class="nav nav-tabs">
+{% if files %}
+    <li class="active"><a href="#files" data-toggle="tab">Files</a></li>
+    <li><a href="#urls" data-toggle="tab">URLs</a></li>
+{% else %}
+    <li><a href="#files" data-toggle="tab">Files</a></li>
+    <li class="active"><a href="#urls" data-toggle="tab">URLs</a></li>
+{% endif %}
+</ul>
+
+
+<div class="tab-content">
+    {% if files %}
+        <div class="tab-pane fade in active" id="files">
+    {% else %}
+        <div class="tab-pane fade" id="files">
+    {% endif %}
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Running Files</h3>
+            </div>
+            {% if files %}
+
+            {% for running in files %}
+
+            <div id="rid" style="visibility:hidden">{{running.id}}</div> 
+
+            <table class="table table-striped" style="table-layout: fixed;">
+                <thead>  <div style="text-align:center"><font size="5" color="green"> Intelligence IP </div></thead>
+                <tr>
+                    <th>C2 IP</th>
+                    <th>CC</th>
+                    <th>Whois</th>
+                    <th>WebAccess Response</th>
+                    <th>WebAccess Title</th>
+                    <th>Virustotal Download malware urls</th>
+                    <th>Virustotal Download malware files</th>
+                </tr>
+                {% for rawintel in running.list_intel %}
+                    <tr style="width:100%; font-size:75%;">
+                        {% for ele in rawintel %}
+                        <td>{{ele}}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+
+            <div id="fbson_maxpage" style="visibility:hidden">{{running.bson_maxpage}}</div> 
+            <div id="fbson_prev" style="visibility:hidden">{{running.prev_bpage}}</div> 
+            <table class="table table-striped" style="table-layout: fixed;">
+                <thead id="fbh">
+                <tr bgcolor="lightskyblue"> <!-- http://www.colordic.org -->
+                    <th> FILE: {{ running.filename }}</th>
+                    <th></th><th>API call LOG</th>
+                    <th> Prev PAGING = {{ running.prev_bpage }} </th>
+                    <th> PAGING MAX = {{ running.bson_maxpage }} </th>
+                    <th><div id="fbsonpagination"></div></th>
+                    <th> process started time {{ running.started_on }} </th>
+                </tr>
+                <tr class="fbtr">
+                    <th>Spent seconds</th>
+                    <th>Thread id</th>
+                    <th>Called APIname</th>
+                    <th>Points</th>
+                    <th>Category</th>
+                    <th>Is Success ?</th>
+                    <th>Time</th>
+                </tr>
+                </thead>
+                <tbody id="fbson" style="width:100%; font-size:75%;"></tbody>
+            </table>
+
+            <div id="fpcap_maxpage" style="visibility:hidden">{{running.pcap_maxpage}}</div> 
+            <div id="fpcap_prev" style="visibility:hidden">{{running.prev_ppage}}</div> 
+            <table class="table table-striped" style="table-layout: fixed;">
+                <thead id="fph">
+                <tr bgcolor="lightskyblue"> <!-- http://www.colordic.org -->
+                    <th> FILE: {{ running.filename }} </th>
+                    <th>Pcap </th><th></th>
+                    <th>(TCP/UDP/ICMP)</th>
+                    <th> Prev PAGING = {{ running.prev_ppage }} </th>
+                    <th> PAGING MAX = {{ running.pcap_maxpage }} </th>
+                    <th><div id="fpcappagination"></div></th>
+                    <th></th>
+                </tr>
+                 <tr class="fptr">
+                    <th>Spent seconds</th>
+                    <th>DstIP</th>
+                    <th>DstPort</th>
+                    <th>SrcIP</th>
+                    <th>SrcPort</th>
+                    <th>Protocol</th>
+                    <th>Dump Top 128 byte</th>
+                    <th>Time</th>
+                </tr>
+                </thead>
+                
+                <tbody id="fpcap" style="width:100%; font-size:75%;"></tbody>
+
+            </table>
+            {% endfor %}
+            {% else %}
+                <div class="panel-body">　No files analyzing .</div>
+            {% endif %}
+        </div>
+    </div>
+
+
+
+    {% if urls %}
+        <div class="tab-pane fade in active" id="urls">
+    {% else %}
+        <div class="tab-pane fade" id="urls">
+    {% endif %}
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Running URLs</h3>
+            </div>
+            {% if urls %}
+
+            {% for running in urls %}
+
+            <div id="rid" style="visibility:hidden">{{running.id}}</div> 
+
+            <table class="table table-striped" style="table-layout: fixed;">
+                <thead>  <div style="text-align:center"><font size="5" color="green"> Intelligence IP </div></thead>
+                <tr>
+                    <th>C2 IP</th>
+                    <th>CC</th>
+                    <th>Whois</th>
+                    <th>WebAccess Response</th>
+                    <th>WebAccess Title</th>
+                    <th>Virustotal Download malware urls</th>
+                    <th>Virustotal Download malware files</th>
+                </tr>
+                {% for rawintel in running.list_intel %}
+                    <tr style="width:100%; font-size:75%;">
+                        {% for ele in rawintel %}
+                        <td>{{ele}}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+
+            <div id="ubson_maxpage" style="visibility:hidden">{{running.bson_maxpage}}</div> 
+            <div id="ubson_prev" style="visibility:hidden">{{running.prev_bpage}}</div> 
+            <table class="table table-striped" style="table-layout: fixed;">
+                <thead id="ubh">
+                <tr bgcolor="lightskyblue"> <!-- http://www.colordic.org -->
+                    <th> URL: {{ running.target }}</th>
+                    <th></th><th>API call LOG</th>
+                    <th> Prev PAGING = {{ running.prev_bpage }} </th>
+                    <th> PAGING MAX = {{ running.bson_maxpage }} </th>
+                    <th><div id="ubsonpagination"></div></th>
+                    <th> process started time {{ running.started_on }} </th>
+                </tr>
+                <tr class="ubtr">
+                    <th>Spent seconds</th>
+                    <th>Threat id</th>
+                    <th>Called APIname</th>
+                    <th>Points</th>
+                    <th>Category</th>
+                    <th>Is Success ?</th>
+                    <th>Time</th>
+                </tr>
+                </thead>
+                <tbody id="ubson" style="width:100%; font-size:75%;"></tbody>
+            </table>
+ 
+            <div id="upcap_maxpage" style="visibility:hidden">{{running.pcap_maxpage}}</div> 
+            <div id="upcap_prev" style="visibility:hidden">{{running.prev_ppage}}</div> 
+            <table class="table table-striped" style="table-layout: fixed;">
+                <thead id="uph">
+                <tr bgcolor="lightskyblue"> <!-- http://www.colordic.org -->
+                    <th> URL: {{ running.target }} Pcap  </th>
+                    <th>(TCP/UDP/ICMP)</th>
+                    <th></th><th></th>
+                    <th> Prev PAGING = {{ running.prev_ppage }} </th>
+                    <th> PAGING MAX = {{ running.pcap_maxpage }} </th>
+                    <th><div id="upcappagination"></div></th>
+                    <th></th>
+                </tr>
+                 <tr class="uptr">
+                    <th>Spent seconds</th>
+                    <th>DstIP</th>
+                    <th>DstPort</th>
+                    <th>SrcIP</th>
+                    <th>SrcPort</th>
+                    <th>Protocol</th>
+                    <th>Dump Top 128 byte</th>
+                    <th>Time</th>
+                </tr>
+                </thead>
+                <tbody id="upcap" style="width:100%; font-size:75%;"></tbody>
+
+            </table>
+            {% endfor %}
+            {% else %}
+            <div class="panel-body">　No urls analyzing .</div>
+            {% endif %}
+        </div>
+ </div>
+ 
+<script>
+var str_rid = document.getElementById("rid").textContent;
+//console.log(str_rid);
+
+
+// files /////////////////////////////////////////////////////////////
+console.log(document.getElementById("files").getAttribute('class'));
+if(document.getElementById("files").getAttribute('class') != "tab-pane fade"){
+    console.log("file pass");
+    var int_bson_prev = Number(document.getElementById("fbson_prev").textContent);
+    var int_pcap_prev = Number(document.getElementById("fpcap_prev").textContent);
+    var int_bson_paging_max = Number(document.getElementById("fbson_maxpage").textContent);
+    var int_pcap_paging_max = Number(document.getElementById("fpcap_maxpage").textContent);
+    $("#fbsonpagination").paging(int_bson_paging_max, {
+        format: '[< ncnnn >]',
+        perpage: 1,
+        onSelect: function(page) {
+        var str_bson_jsonurl = "http://127.0.0.1:8001/static/json/" + str_rid + "/bson/" + "bson_p" + page + ".json";
+        $.getJSON( str_bson_jsonurl, {})
+            .done( function( data ) {
+              console.log("get bson-json data.");
+              $("#fbson").find("tr:gt(0)").remove();
+            var str_items= "";
+              for(i=1; i <= Object.keys(data).length; i++) {
+            if( page > int_bson_prev ){
+              str_items += '<tr class="fbtr" bgcolor="tomato">';
+            } else {
+              str_items += '<tr class="fbtr">';
+            }
+        $.each( data[i], function( key, val ){
+              str_items += "<td>" + val + "</td>";
+                });
+                str_items += "</tr>";
+          };
+              $("#fbson").append(str_items);
+            });
+        },
+        onFormat: function(type) {
+          switch (type) {
+            case 'block': // n and c
+              return '<a href="#">' + this.value + '</a>';
+            case 'next': // >
+              return '<a href="#">&gt;</a>';
+            case 'prev': // <
+              return '<a href="#">&lt;</a>';
+            case 'first': // [
+              return '<a href="#">first</a>';
+            case 'last': // ]
+              return '<a href="#">last</a>';
+            }
+          }
+    });
+
+
+    $("#fpcappagination").paging(int_pcap_paging_max, {
+    format: '[< ncnnn >]',
+    perpage: 1,
+    onSelect: function(page) {
+    var str_bson_jsonurl = "http://127.0.0.1:8001/static/json/" + str_rid + "/pcap/" + "pcap_p" + page + ".json";
+      $.getJSON( str_bson_jsonurl, {})
+        .done( function( data ) {
+            console.log("get pcap-json data.");
+            $("#fpcap").find("tr:gt(0)").remove();
+            var str_items= "";
+            for(i=1; i <= Object.keys(data).length; i++) {
+                if( page > int_pcap_prev ){
+                    str_items += '<tr class="fptr" bgcolor="tomato">';
+                    console.log("tomato");
+                } else {
+                    str_items += '<tr class="fptr">';
+                }
+                $.each( data[i], function( key, val ){
+                    str_items += "<td>" + val + "</td>";
+                });
+                str_items += "</tr>";
+            };
+          $("#fpcap").append(str_items);
+        });
+    },
+    onFormat: function(type) {
+      switch (type) {
+        case 'block': // n and c
+          return '<a href="#">' + this.value + '</a>';
+        case 'next': // >
+          return '<a href="#">&gt;</a>';
+        case 'prev': // <
+          return '<a href="#">&lt;</a>';
+        case 'first': // [
+          return '<a href="#">first</a>';
+        case 'last': // ]
+          return '<a href="#">last</a>';
+        }
+      }
+    });
+};
+
+// urls /////////////////////////////////////////////////////////////
+console.log(document.getElementById("urls").getAttribute('class'));
+if(document.getElementById("urls").getAttribute('class') != "tab-pane fade"){
+    console.log("url pass");
+    var int_bson_prev = Number(document.getElementById("ubson_prev").textContent);
+    var int_pcap_prev = Number(document.getElementById("upcap_prev").textContent);
+    var int_bson_paging_max = Number(document.getElementById("ubson_maxpage").textContent);
+    var int_pcap_paging_max = Number(document.getElementById("upcap_maxpage").textContent);    
+    $("#ubsonpagination").paging(int_bson_paging_max, {
+        format: '[< ncnnn >]',
+        perpage: 1,
+        onSelect: function(page) {
+        var str_bson_jsonurl = "http://127.0.0.1:8001/static/json/" + str_rid + "/bson/" + "bson_p" + page + ".json";
+        $.getJSON( str_bson_jsonurl, {})
+            .done( function( data ) {
+              console.log("get url bson-json data.");
+              $("#ubson").find("tr:gt(0)").remove();
+            var str_items= "";
+              for(i=1; i <= Object.keys(data).length; i++) {
+            if( page > int_bson_prev ){
+              str_items += '<tr class="ubtr" bgcolor="tomato">';
+            } else {
+              str_items += '<tr class="ubtr">';
+            }
+        $.each( data[i], function( key, val ){
+              str_items += "<td>" + val + "</td>";
+                });
+                str_items += "</tr>";
+          };
+              $("#ubson").append(str_items);
+            });
+        },
+        onFormat: function(type) {
+          switch (type) {
+            case 'block': // n and c
+              return '<a href="#">' + this.value + '</a>';
+            case 'next': // >
+              return '<a href="#">&gt;</a>';
+            case 'prev': // <
+              return '<a href="#">&lt;</a>';
+            case 'first': // [
+              return '<a href="#">first</a>';
+            case 'last': // ]
+              return '<a href="#">last</a>';
+            }
+          }
+    });
+
+
+    $("#upcappagination").paging(int_pcap_paging_max, {
+    format: '[< ncnnn >]',
+    perpage: 1,
+    onSelect: function(page) {
+    var str_bson_jsonurl = "http://127.0.0.1:8001/static/json/" + str_rid + "/pcap/" + "pcap_p" + page + ".json";
+      $.getJSON( str_bson_jsonurl, {})
+        .done( function( data ) {
+          console.log("get url pcap-json data.");
+          $("#upcap").find("tr:gt(0)").remove();
+      var str_items= "";
+          for(i=1; i <= Object.keys(data).length; i++) {
+        if( page > int_pcap_prev ){
+          str_items += '<tr class="uptr" bgcolor="tomato">';
+        } else {
+          str_items += '<tr class="uptr">';
+        }
+    $.each( data[i], function( key, val ){
+          str_items += "<td>" + val + "</td>";
+            });
+            str_items += "</tr>";
+      };
+          $("#upcap").append(str_items);
+    });
+    },
+    onFormat: function(type) {
+      switch (type) {
+        case 'block': // n and c
+          return '<a href="#">' + this.value + '</a>';
+        case 'next': // >
+          return '<a href="#">&gt;</a>';
+        case 'prev': // <
+          return '<a href="#">&lt;</a>';
+        case 'first': // [
+          return '<a href="#">first</a>';
+        case 'last': // ]
+          return '<a href="#">last</a>';
+        }
+      }
+    });
+};
+</script>   
+
+{% endblock %}

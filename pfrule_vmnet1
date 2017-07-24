@@ -1,0 +1,4 @@
+nat on en1 from vmnet1:network to any -> (en1)
+pass inet proto icmp all
+pass in on vmnet1 proto udp from any to any port domain keep state
+pass quick on en1 proto udp from any to any port domain keep state

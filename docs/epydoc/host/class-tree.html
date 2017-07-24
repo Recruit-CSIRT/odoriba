@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class Hierarchy</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Trees&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://cuckoosandbox.org">Cuckoo Sandbox</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">&nbsp;</td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="class-tree.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<center><b>
+ [ <a href="module-tree.html">Module Hierarchy</a>
+ | <a href="class-tree.html">Class Hierarchy</a> ]
+</b></center><br />
+<h1 class="epydoc">Class Hierarchy</h1>
+<ul class="nomargin-top">
+    <li> <strong class="uidlink">SocketServer.BaseRequestHandler</strong>:
+      <em class="summary">Base class for request handler classes.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.resultserver.ResultHandler-class.html">lib.cuckoo.core.resultserver.ResultHandler</a></strong>:
+      <em class="summary">Result handler.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">SocketServer.BaseServer</strong>:
+      <em class="summary">Base class for server classes.</em>
+    <ul>
+    <li> <strong class="uidlink">SocketServer.TCPServer</strong>:
+      <em class="summary">Base class for various socket-based server classes.</em>
+    <ul>
+    <li> <strong class="uidlink">SocketServer.ThreadingTCPServer</strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.resultserver.ResultServer-class.html">lib.cuckoo.core.resultserver.ResultServer</a></strong>:
+      <em class="summary">Result server.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.config.Config-class.html">lib.cuckoo.common.config.Config</a></strong>:
+      <em class="summary">Configuration file parser.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.dns.Resultholder-class.html">lib.cuckoo.common.dns.Resultholder</a></strong>
+    </li>
+    <li> <strong class="uidlink">xmlrpclib.ServerProxy</strong>:
+      <em class="summary">uri [,options] -&gt; a logical connection to an XML-RPC server</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.utils.TimeoutServer-class.html">lib.cuckoo.common.utils.TimeoutServer</a></strong>:
+      <em class="summary">Timeout server for XMLRPC.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">SocketServer.ThreadingMixIn</strong>:
+      <em class="summary">Mix-in class to handle each request in a new thread.</em>
+    <ul>
+    <li> <strong class="uidlink">SocketServer.ThreadingTCPServer</strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.resultserver.ResultServer-class.html">lib.cuckoo.core.resultserver.ResultServer</a></strong>:
+      <em class="summary">Result server.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">xmlrpclib.Transport</strong>:
+      <em class="summary">Handles an HTTP transaction to an XML-RPC server.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.utils.TimeoutTransport-class.html">lib.cuckoo.common.utils.TimeoutTransport</a></strong>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.objects.URL-class.html">lib.cuckoo.common.objects.URL</a></strong>:
+      <em class="summary">URL base object.</em>
+    </li>
+    <li> <strong class="uidlink">object</strong>:
+      <em class="summary">The most base type</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.abstracts.Auxiliary-class.html">lib.cuckoo.common.abstracts.Auxiliary</a></strong>:
+      <em class="summary">Base abstract class for auxiliary modules.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="modules.auxiliary.mitm.MITM-class.html">modules.auxiliary.mitm.MITM</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.auxiliary.services.Services-class.html">modules.auxiliary.services.Services</a></strong>:
+      <em class="summary">Allows one or more additional VMs to be run next to an analysis.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.auxiliary.sniffer.Sniffer-class.html">modules.auxiliary.sniffer.Sniffer</a></strong>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">lib.cuckoo.core.database.Base</strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.database.AlembicVersion-class.html">lib.cuckoo.core.database.AlembicVersion</a></strong>:
+      <em class="summary">Table used to pinpoint actual database schema release.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.database.Error-class.html">lib.cuckoo.core.database.Error</a></strong>:
+      <em class="summary">Analysis errors.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.database.Guest-class.html">lib.cuckoo.core.database.Guest</a></strong>:
+      <em class="summary">Tracks guest run.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.database.Machine-class.html">lib.cuckoo.core.database.Machine</a></strong>:
+      <em class="summary">Configured virtual machines to be used as guests.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.database.Sample-class.html">lib.cuckoo.core.database.Sample</a></strong>:
+      <em class="summary">Submitted files details.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.database.Tag-class.html">lib.cuckoo.core.database.Tag</a></strong>:
+      <em class="summary">Tag describing anything you want.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.database.Task-class.html">lib.cuckoo.core.database.Task</a></strong>:
+      <em class="summary">Analysis task queue.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">exceptions.BaseException</strong>:
+      <em class="summary">Common base class for all exceptions</em>
+    <ul>
+    <li> <strong class="uidlink">exceptions.Exception</strong>:
+      <em class="summary">Common base class for all non-exit exceptions.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.exceptions.CuckooCriticalError-class.html">lib.cuckoo.common.exceptions.CuckooCriticalError</a></strong>:
+      <em class="summary">Cuckoo struggle in a critical error.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.exceptions.CuckooDatabaseError-class.html">lib.cuckoo.common.exceptions.CuckooDatabaseError</a></strong>:
+      <em class="summary">Cuckoo database error.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.exceptions.CuckooDependencyError-class.html">lib.cuckoo.common.exceptions.CuckooDependencyError</a></strong>:
+      <em class="summary">Missing dependency error.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.exceptions.CuckooStartupError-class.html">lib.cuckoo.common.exceptions.CuckooStartupError</a></strong>:
+      <em class="summary">Error starting up Cuckoo.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.exceptions.CuckooOperationalError-class.html">lib.cuckoo.common.exceptions.CuckooOperationalError</a></strong>:
+      <em class="summary">Cuckoo operation error.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.exceptions.CuckooAnalysisError-class.html">lib.cuckoo.common.exceptions.CuckooAnalysisError</a></strong>:
+      <em class="summary">Error during analysis.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.exceptions.CuckooGuestError-class.html">lib.cuckoo.common.exceptions.CuckooGuestError</a></strong>:
+      <em class="summary">Cuckoo guest agent error.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.exceptions.CuckooMachineError-class.html">lib.cuckoo.common.exceptions.CuckooMachineError</a></strong>:
+      <em class="summary">Error managing analysis machine.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.exceptions.CuckooProcessingError-class.html">lib.cuckoo.common.exceptions.CuckooProcessingError</a></strong>:
+      <em class="summary">Error in processor module.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.exceptions.CuckooReportError-class.html">lib.cuckoo.common.exceptions.CuckooReportError</a></strong>:
+      <em class="summary">Error in reporting module.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.exceptions.CuckooResultError-class.html">lib.cuckoo.common.exceptions.CuckooResultError</a></strong>:
+      <em class="summary">Cuckoo result server error.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.virustotal.VirusTotalResourceNotScanned-class.html">lib.cuckoo.common.virustotal.VirusTotalResourceNotScanned</a></strong>:
+      <em class="summary">This resource has not been scanned yet.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.resultserver.Disconnect-class.html">lib.cuckoo.core.resultserver.Disconnect</a></strong>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.abstracts.BehaviorHandler-class.html">lib.cuckoo.common.abstracts.BehaviorHandler</a></strong>:
+      <em class="summary">Base class for behavior handlers inside of BehaviorAnalysis.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="modules.processing.behavior.Anomaly-class.html">modules.processing.behavior.Anomaly</a></strong>:
+      <em class="summary">Anomaly detected during analysis.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.behavior.ApiStats-class.html">modules.processing.behavior.ApiStats</a></strong>:
+      <em class="summary">Counts API calls.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.behavior.GenericBehavior-class.html">modules.processing.behavior.GenericBehavior</a></strong>:
+      <em class="summary">Generates summary information.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.platform.linux.LinuxSystemTap-class.html">modules.processing.platform.linux.LinuxSystemTap</a></strong>:
+      <em class="summary">Parses systemtap generated plaintext logs (see data/strace.stp).</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.behavior.PlatformInfo-class.html">modules.processing.behavior.PlatformInfo</a></strong>:
+      <em class="summary">Provides information about the platform for the collected behavior.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.behavior.ProcessTree-class.html">modules.processing.behavior.ProcessTree</a></strong>:
+      <em class="summary">Generates process tree.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.behavior.Summary-class.html">modules.processing.behavior.Summary</a></strong>:
+      <em class="summary">Generates overview summary information (not split by process).</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.platform.windows.WindowsMonitor-class.html">modules.processing.platform.windows.WindowsMonitor</a></strong>:
+      <em class="summary">Parses monitor generated logs.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.platform.windows.BehaviorReconstructor-class.html">modules.processing.platform.windows.BehaviorReconstructor</a></strong>:
+      <em class="summary">Reconstructs the behavior of behavioral API logs.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.netlog.BsonParser-class.html">lib.cuckoo.common.netlog.BsonParser</a></strong>:
+      <em class="summary">Handle .bson logs from monitor.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.database.Database-class.html">lib.cuckoo.core.database.Database</a></strong>:
+      <em class="summary">Analysis queue database.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.objects.File-class.html">lib.cuckoo.common.objects.File</a></strong>:
+      <em class="summary">Basic file object class with all useful utilities.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.resultserver.FileUpload-class.html">lib.cuckoo.core.resultserver.FileUpload</a></strong>
+    </li>
+    <li> <strong class="uidlink">logging.Filterer</strong>:
+      <em class="summary">A base class for loggers and handlers which allows them to share 
+        common code.</em>
+    <ul>
+    <li> <strong class="uidlink">logging.Handler</strong>:
+      <em class="summary">Handler instances dispatch logging events to specific destinations.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.startup.DatabaseHandler-class.html">lib.cuckoo.core.startup.DatabaseHandler</a></strong>:
+      <em class="summary">Logging to database handler.</em>
+    </li>
+    <li> <strong class="uidlink">logging.StreamHandler</strong>:
+      <em class="summary">A handler class which writes logging records, appropriately 
+        formatted, to a stream.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.startup.ConsoleHandler-class.html">lib.cuckoo.core.startup.ConsoleHandler</a></strong>:
+      <em class="summary">Logging to console handler.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.guest.GuestManager-class.html">lib.cuckoo.core.guest.GuestManager</a></strong>:
+      <em class="summary">This class represents the new Guest Manager.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.resultserver.LogHandler-class.html">lib.cuckoo.core.resultserver.LogHandler</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.abstracts.Machinery-class.html">lib.cuckoo.common.abstracts.Machinery</a></strong>:
+      <em class="summary">Base abstract class for machinery modules.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="modules.machinery.avd.Avd-class.html">modules.machinery.avd.Avd</a></strong>:
+      <em class="summary">Virtualization layer for Android Emulator.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.abstracts.LibVirtMachinery-class.html">lib.cuckoo.common.abstracts.LibVirtMachinery</a></strong>:
+      <em class="summary">Libvirt based machine manager.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="modules.machinery.esx.ESX-class.html">modules.machinery.esx.ESX</a></strong>:
+      <em class="summary">Virtualization layer for ESXi/ESX based on python-libvirt.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.machinery.kvm.KVM-class.html">modules.machinery.kvm.KVM</a></strong>:
+      <em class="summary">Virtualization layer for KVM based on python-libvirt.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.machinery.physical.Physical-class.html">modules.machinery.physical.Physical</a></strong>:
+      <em class="summary">Manage physical sandboxes.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.machinery.qemu.QEMU-class.html">modules.machinery.qemu.QEMU</a></strong>:
+      <em class="summary">Virtualization layer for QEMU (non-KVM).</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.machinery.vmware.VMware-class.html">modules.machinery.vmware.VMware</a></strong>:
+      <em class="summary">Virtualization layer for VMware Workstation using vmrun utility.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.machinery.virtualbox.VirtualBox-class.html">modules.machinery.virtualbox.VirtualBox</a></strong>:
+      <em class="summary">Virtualization layer for VirtualBox.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.machinery.xenserver.XenServerMachinery-class.html">modules.machinery.xenserver.XenServerMachinery</a></strong>:
+      <em class="summary">Virtualization layer for XenServer using the XenAPI XML-RPC 
+        interface.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.machinery.vsphere.vSphere-class.html">modules.machinery.vsphere.vSphere</a></strong>:
+      <em class="summary">vSphere/ESXi machinery class based on pyVmomi Python SDK.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.machinery.avd.OSCommand-class.html">modules.machinery.avd.OSCommand</a></strong>:
+      <em class="summary">Tool class that provides common methods to execute commands on the 
+        OS.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.guest.OldGuestManager-class.html">lib.cuckoo.core.guest.OldGuestManager</a></strong>:
+      <em class="summary">Old and deprecated Guest Manager.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.network.Pcap-class.html">modules.processing.network.Pcap</a></strong>:
+      <em class="summary">Reads network data from PCAP file.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.network.Pcap2-class.html">modules.processing.network.Pcap2</a></strong>:
+      <em class="summary">Interprets the PCAP file through the httpreplay library which 
+        parses the various protocols, decrypts and decodes them, and then 
+        provides us with the high level representation of it.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.static.PortableExecutable-class.html">modules.processing.static.PortableExecutable</a></strong>:
+      <em class="summary">PE analysis.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.abstracts.Processing-class.html">lib.cuckoo.common.abstracts.Processing</a></strong>:
+      <em class="summary">Base abstract class for processing module.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="modules.processing.analysisinfo.AnalysisInfo-class.html">modules.processing.analysisinfo.AnalysisInfo</a></strong>:
+      <em class="summary">General information about analysis session.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.apkinfo.ApkInfo-class.html">modules.processing.apkinfo.ApkInfo</a></strong>:
+      <em class="summary">Static android information about analysis session.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.baseline.Baseline-class.html">modules.processing.baseline.Baseline</a></strong>:
+      <em class="summary">Reduces Baseline results from gathered information.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.behavior.BehaviorAnalysis-class.html">modules.processing.behavior.BehaviorAnalysis</a></strong>:
+      <em class="summary">Behavior Analyzer.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.debug.Debug-class.html">modules.processing.debug.Debug</a></strong>:
+      <em class="summary">Analysis debug information.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.droidmon.Droidmon-class.html">modules.processing.droidmon.Droidmon</a></strong>:
+      <em class="summary">Extract Dynamic API calls Info From Droidmon logs.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.dropped.Dropped-class.html">modules.processing.dropped.Dropped</a></strong>:
+      <em class="summary">Dropped files analysis.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.buffer.DroppedBuffer-class.html">modules.processing.buffer.DroppedBuffer</a></strong>:
+      <em class="summary">Dropped buffer analysis.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.googleplay.GooglePlay-class.html">modules.processing.googleplay.GooglePlay</a></strong>:
+      <em class="summary">Google Play information about the analysis session</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.memory.Memory-class.html">modules.processing.memory.Memory</a></strong>:
+      <em class="summary">Volatility Analyzer.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.network.NetworkAnalysis-class.html">modules.processing.network.NetworkAnalysis</a></strong>:
+      <em class="summary">Network analysis.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.procmemory.ProcessMemory-class.html">modules.processing.procmemory.ProcessMemory</a></strong>:
+      <em class="summary">Analyze process memory dumps.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.screenshots.Screenshots-class.html">modules.processing.screenshots.Screenshots</a></strong>:
+      <em class="summary">Screenshot file OCR analysis.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.snort.Snort-class.html">modules.processing.snort.Snort</a></strong>:
+      <em class="summary">Snort processing module.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.static.Static-class.html">modules.processing.static.Static</a></strong>:
+      <em class="summary">Static analysis.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.strings.Strings-class.html">modules.processing.strings.Strings</a></strong>:
+      <em class="summary">Extract strings from analyzed file.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.suricata.Suricata-class.html">modules.processing.suricata.Suricata</a></strong>:
+      <em class="summary">Suricata processing module.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.dumptls.TLSMasterSecrets-class.html">modules.processing.dumptls.TLSMasterSecrets</a></strong>:
+      <em class="summary">Cross-references TLS master secrets extracted from the monitor and 
+        key information extracted from the PCAP to dump a master secrets 
+        file compatible with, e.g., Wireshark.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.targetinfo.TargetInfo-class.html">modules.processing.targetinfo.TargetInfo</a></strong>:
+      <em class="summary">General information about a file.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.virustotal.VirusTotal-class.html">modules.processing.virustotal.VirusTotal</a></strong>:
+      <em class="summary">Gets antivirus signatures from VirusTotal.com for various results.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.abstracts.Report-class.html">lib.cuckoo.common.abstracts.Report</a></strong>:
+      <em class="summary">Base abstract class for reporting module.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="modules.reporting.jsondump.JsonDump-class.html">modules.reporting.jsondump.JsonDump</a></strong>:
+      <em class="summary">Saves analysis results in JSON format.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.reporting.moloch.Moloch-class.html">modules.reporting.moloch.Moloch</a></strong>:
+      <em class="summary">Moloch reporting module.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.reporting.mongodb.MongoDB-class.html">modules.reporting.mongodb.MongoDB</a></strong>:
+      <em class="summary">Stores report in MongoDB.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.reporting.reporthtml.ReportHTML-class.html">modules.reporting.reporthtml.ReportHTML</a></strong>:
+      <em class="summary">Stores report in HTML format.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.resultserver.ResultServer-class.html">lib.cuckoo.core.resultserver.ResultServer</a></strong>:
+      <em class="summary">Result server.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.plugins.RunAuxiliary-class.html">lib.cuckoo.core.plugins.RunAuxiliary</a></strong>:
+      <em class="summary">Auxiliary modules manager.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.plugins.RunProcessing-class.html">lib.cuckoo.core.plugins.RunProcessing</a></strong>:
+      <em class="summary">Analysis Results Processing Engine.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.plugins.RunReporting-class.html">lib.cuckoo.core.plugins.RunReporting</a></strong>:
+      <em class="summary">Reporting Engine.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.plugins.RunSignatures-class.html">lib.cuckoo.core.plugins.RunSignatures</a></strong>:
+      <em class="summary">Run Signatures.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.scheduler.Scheduler-class.html">lib.cuckoo.core.scheduler.Scheduler</a></strong>:
+      <em class="summary">Tasks Scheduler.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.abstracts.Signature-class.html">lib.cuckoo.common.abstracts.Signature</a></strong>:
+      <em class="summary">Base class for Cuckoo signatures.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="modules.signatures.creates_exe.CreatesExe-class.html">modules.signatures.creates_exe.CreatesExe</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.signatures.generic_metrics.SystemMetrics-class.html">modules.signatures.generic_metrics.SystemMetrics</a></strong>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.network.SortCap-class.html">modules.processing.network.SortCap</a></strong>:
+      <em class="summary">SortCap is a wrapper around the packet lib (dpkt) that allows us to
+        sort pcaps together with the batch_sort function above.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.platform.linux.StapParser-class.html">modules.processing.platform.linux.StapParser</a></strong>:
+      <em class="summary">Handle .stap logs from the Linux analyzer.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.utils.SuperLock-class.html">lib.cuckoo.common.utils.SuperLock</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.virustotal.VirusTotalAPI-class.html">lib.cuckoo.common.virustotal.VirusTotalAPI</a></strong>:
+      <em class="summary">Wrapper to VirusTotal API.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.memory.VolatilityAPI-class.html">modules.processing.memory.VolatilityAPI</a></strong>:
+      <em class="summary">Volatility API interface.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.memory.VolatilityManager-class.html">modules.processing.memory.VolatilityManager</a></strong>:
+      <em class="summary">Handle several volatility results.</em>
+    </li>
+    <li> <strong class="uidlink">threading._Verbose</strong>
+    <ul>
+    <li> <strong class="uidlink">threading.Thread</strong>:
+      <em class="summary">A class that represents a thread of control.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.core.scheduler.AnalysisManager-class.html">lib.cuckoo.core.scheduler.AnalysisManager</a></strong>:
+      <em class="summary">Analysis Manager.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">dict</strong>:
+      <em class="summary">dict() -&gt; new empty dictionary
+dict(mapping) -&gt; new dictionary initialized from a mapping object's
+    (key, value) pairs
+dict(iterable) -&gt; new dictionary initialized as if via:
+    d = {}
+    for k, v in iterable:
+        d[k] = v
+dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
+    in the keyword argument list.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.objects.Dictionary-class.html">lib.cuckoo.common.objects.Dictionary</a></strong>:
+      <em class="summary">Cuckoo custom dict.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.irc.ircMessage-class.html">lib.cuckoo.common.irc.ircMessage</a></strong>:
+      <em class="summary">IRC Protocol Request.</em>
+    </li>
+    <li> <strong class="uidlink">list</strong>:
+      <em class="summary">list() -&gt; new empty list list(iterable) -&gt; new list 
+        initialized from iterable's items</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="modules.processing.platform.linux.FilteredProcessLog-class.html">modules.processing.platform.linux.FilteredProcessLog</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.platform.windows.MonitorProcessLog-class.html">modules.processing.platform.windows.MonitorProcessLog</a></strong>:
+      <em class="summary">Yields each API call event to the parent handler.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">tuple</strong>:
+      <em class="summary">tuple() -&gt; empty tuple tuple(iterable) -&gt; tuple initialized 
+        from iterable's items</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="modules.processing.network.Keyed-class.html">modules.processing.network.Keyed</a></strong>:
+      <em class="summary">Keyed(key, obj)</em>
+    </li>
+    <li> <strong class="uidlink"><a href="modules.processing.network.Packet-class.html">modules.processing.network.Packet</a></strong>:
+      <em class="summary">Packet(raw, ts)</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">type</strong>:
+      <em class="summary">type(object) -&gt; the object's type type(name, bases, dict) -&gt; 
+        a new type</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.utils.Singleton-class.html">lib.cuckoo.common.utils.Singleton</a></strong>:
+      <em class="summary">Singleton.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="lib.cuckoo.common.utils.ThreadSingleton-class.html">lib.cuckoo.common.utils.ThreadSingleton</a></strong>:
+      <em class="summary">Singleton per thread.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+</ul>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Trees&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://cuckoosandbox.org">Cuckoo Sandbox</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Jan 11 19:29:04 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Starting Cuckoo &mdash; Cuckoo Sandbox v2.0-rc1 Book</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.0-rc1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Cuckoo Sandbox v2.0-rc1 Book" href="../index.html" />
+    <link rel="up" title="Usage" href="index.html" />
+    <link rel="next" title="Submit an Analysis" href="submit.html" />
+    <link rel="prev" title="Usage" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="submit.html" title="Submit an Analysis"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="index.html" title="Usage"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Cuckoo Sandbox v2.0-rc1 Book</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Usage</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="starting-cuckoo">
+<h1>Starting Cuckoo<a class="headerlink" href="#starting-cuckoo" title="Permalink to this headline">¶</a></h1>
+<p>To start Cuckoo use the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python cuckoo.py
+</pre></div>
+</div>
+<p>Make sure to run it inside Cuckoo&#8217;s root directory.</p>
+<p>You will get an output similar to this:</p>
+<div class="highlight-python"><div class="highlight"><pre>  eeee e   e eeee e   e  eeeee eeeee
+  8  8 8   8 8  8 8   8  8  88 8  88
+  8e   8e  8 8e   8eee8e 8   8 8   8
+  88   88  8 88   88   8 8   8 8   8
+  88e8 88ee8 88e8 88   8 8eee8 8eee8
+
+ Cuckoo Sandbox 1.2
+ www.cuckoosandbox.org
+ Copyright (c) 2010-2015
+
+ Checking for updates...
+ Good! You have the latest version available.
+
+2013-04-07 15:57:17,459 [lib.cuckoo.core.scheduler] INFO: Using &quot;virtualbox&quot; machine manager
+2013-04-07 15:57:17,861 [lib.cuckoo.core.scheduler] INFO: Loaded 1 machine/s
+2013-04-07 15:57:17,862 [lib.cuckoo.core.scheduler] INFO: Waiting for analysis tasks...
+</pre></div>
+</div>
+<p>Note that Cuckoo checks for updates on a remote API located at <em>api.cuckoosandbox.org</em>.
+You can avoid this by disabling the <tt class="docutils literal"><span class="pre">version_check</span></tt> option in the configuration file.</p>
+<p>Now Cuckoo is ready to run and it&#8217;s waiting for submissions.</p>
+<p><tt class="docutils literal"><span class="pre">cuckoo.py</span></tt> accepts some command line options as shown by the help:</p>
+<div class="highlight-python"><div class="highlight"><pre>usage: cuckoo.py [-h] [-q] [-d] [-v] [-a] [-t] [-m MAX_ANALYSIS_COUNT]
+                 [-u USER] [--clean]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -q, --quiet           Display only error messages
+  -d, --debug           Display debug messages
+  -v, --version         show program&#39;s version number and exit
+  -a, --artwork         Show artwork
+  -t, --test            Test startup
+  -m MAX_ANALYSIS_COUNT, --max-analysis-count MAX_ANALYSIS_COUNT
+                        Maximum number of analyses
+  -u USER, --user USER  Drop user privileges to this user
+  --clean               Remove all tasks and samples and their associated data
+</pre></div>
+</div>
+<p>Most importantly <tt class="docutils literal"><span class="pre">--debug</span></tt> and <tt class="docutils literal"><span class="pre">--quiet</span></tt> respectively increase and decrease the logging
+verbosity.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/cuckoo.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Usage</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="submit.html"
+                        title="next chapter">Submit an Analysis</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/usage/start.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="submit.html" title="Submit an Analysis"
+             >next</a></li>
+        <li class="right" >
+          <a href="index.html" title="Usage"
+             >previous</a> |</li>
+        <li><a href="../index.html">Cuckoo Sandbox v2.0-rc1 Book</a> &raquo;</li>
+          <li><a href="index.html" >Usage</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010-2015, Cuckoo Foundation.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

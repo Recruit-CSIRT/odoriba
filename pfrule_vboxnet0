@@ -1,0 +1,4 @@
+nat on en0 from vboxnet0:network to any -> (en0)
+pass inet proto icmp all
+pass in on vboxnet0 proto udp from any to any port domain keep state
+pass quick on en0 proto udp from any to any port domain keep state

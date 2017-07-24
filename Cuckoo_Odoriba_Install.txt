@@ -1,0 +1,144 @@
+Cuckoo Odoriba Install 
+
+Install Examples.
+	[ System ]
+	Host OS : OS X ElCapitan
+	CPU: Intel core i7
+	Mem: 16GB
+	HDD: 2TB
+
+****  Cuckoo Install Part 
+
+>>>>>>>  HOST OS
+1. Install home brew 
+	$ ruby -v
+	$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	$ brew doctor
+
+2. Preparation for cuckoo2.0 rc1 install 
+	2.0 Git Clone
+		$ git clone https://github.com/Recruit-CSIRT/odoriba.git
+
+	2.1 apt-get install（for mongodb(linux) and tcpdump.) not need if you use/usr/sbin/tcpdump and brew install mongodb.
+		flink helper script
+			<http://www.finkproject.org/download/srcdist.php>
+	       	$ chmod +x flink_helperscript.sh
+		$ xcode install
+		$ java install   http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+				   jdk-8u91-macosx-x64.dmg
+		$ ./flink_helperscript.sh
+				xquaz install
+
+		$ ./flink_helperscript.sh
+				flink install  :Enter
+				lastly update 「3: rsync」
+	
+	2.2 python 2.7.11 install
+	    $ brew install python 
+		$ pip install --upgrade pip
+	2.3  pyenv install
+		$ brew install pyenv-virtualenv
+		< addition ~/.bash_profile >
+		export PYENV_ROOT=${HOME}/.pyenv
+		if [ -d "${PYENV_ROOT}" ]; then
+    		export PATH=${PYENV_ROOT}/bin:$PATH
+    		eval "$(pyenv init -)"
+    		eval "$(pyenv virtualenv-init -)"	
+		fi
+
+	2.4  cuckoo requirement install
+		Ref: http://docs.cuckoosandbox.org/en/latest/installation/host/requirements/
+
+		$ sudo apt-get install mongodb
+			sudo mkdir -p /data/db
+			sudo mongod		
+		$ sudo pip install -r cuckoo/requirements.txt
+			#cryptography==1.0 # Comments Out
+			 cryptography-1.3.2 was installed instead.
+		$ brew install yara
+		$ brew install ssdeep
+		# download https://pypi.python.org/pypi/pydeep/
+			$ tar xzvf Downloads/pydeep-0.2.tar.gz 
+			$ cd pydeep-0.2/
+			$ python setup.py  build
+			$ python setup.py install
+		$ sudo apt-get install tcpdump
+		$ brew install tesseract       # for screen shot　
+		$ sudo pip install pycrypto  ( if you use volatility 2.5 later)
+
+		* volatility install (brew install volatility ; does't work from cuckoo)
+		# download volatility from https://github.com/volatilityfoundation  
+	　	$ python setup.py install
+		https://pypi.python.org/pypi/distorm3
+	    $ unzip distorm3-3.3.0.zip
+	    $ cd distorm3-3.3.0
+	    $ sudo python setup.py build install
+
+		cuckoo user create 〜 register vboxusers 
+		$ System Preference -> User and Group ->  cuckoo user create(Pass: cuckoo)
+		$ sudo dscl . -create /Groups/vboxusers
+		$ sudo dscl . -append /Groups/vboxusers PrimaryGroupID 999
+		$ sudo dscl . -append /Groups/vboxusers GroupMembership cuckoo
+
+
+
+>>>>>>>>  GUEST OS 
+	http://docs.cuckoosandbox.org/en/latest/installation/guest/
+
+
+>>>>>>>  HOST OS Configuration
+	■conf settings at least
+	http://docs.cuckoosandbox.org/en/latest/installation/host/configuration/
+
+	# cuckoo conf
+	check result server's ip and vboxnet0 interface
+	memory_dump = on
+
+	# virtualbox.conf
+	# vmware.conf 
+
+	# reporting.conf
+	[mongodb]
+	enabled = yes
+
+	# auxiliary.conf
+	tcpdump = /sw/sbin/tcpdump
+
+	# processing.conf
+	[baseline]
+	enabled = yes
+	[memory]
+	enabled = yes
+	[screenshots]
+	enabled = yes
+	tesseract = /usr/local/bin/tesseract
+
+
+****   Odoriba Custom settings
+# preparations(optional)
+	$ touch ~/odoriba/log/got_seedslist.csv
+	$ chmod 766 ~/odoriba/log/got_seedslist.csv
+
+	# Database Deletion
+	> cuckooDB
+	$ ~/cuckoo/cuckoo.py —-clean
+
+	>Customize DB
+	$ mongo
+	$ use intel
+		$ db.dropDatabase()
+	$ use real
+		$ db.dropDatabase()
+
+	Memo
+	■ Browser
+	http://127.0.0.1:8001
+
+	■ Signature update
+	~/cuckoo/utils/community.py --signatures --force --rewrite 
+
+
+
+
+
+	

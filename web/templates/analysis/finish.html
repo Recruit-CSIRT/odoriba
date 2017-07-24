@@ -1,0 +1,42 @@
+<!--
+# Copyright (C) 2016- Tatsuya Ichida Recruit Technologies.
+# [original] this page is shown when pushed analysis finish botton.
+# Change 127.0.0.1:8001 to your own.
+-->
+
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<p style="margin-bottom: 10px;"><img src="{% static "graphic/csirt_odoriba.png" %}" /></p>
+
+Storing Result .....
+
+<script type="text/javascript">
+<!--
+count = 10; //init count
+var id = setInterval(function(){
+	countdown();
+	if (count <= 0){ 
+		clearInterval(id); location.href ="http://127.0.0.1:8001/analysis/latest/"; } },1000); 
+
+
+function countdown() {
+	count--;
+	var div = document.getElementById("textDiv");  
+    var nestedDiv = document.getElementById("nested");  
+    nestedDiv.textContent = `After ${count} seconds, rediret to cuckoo report page.`;  
+    var text = div.textContent;  	
+}
+-->
+</script>
+
+<div id="textDiv">  
+    <div id="nested"></div>  
+</div> 
+
+
+
+If it's not redirected, click
+<A href="http://127.0.0.1:8001/analysis/latest/">here</A>
+{% endblock %}
