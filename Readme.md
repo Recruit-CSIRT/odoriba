@@ -76,13 +76,13 @@ set your Guest IP in ./internet_control.py (this modules support VirtualBox and 
 `$ python odoriba.py [vmware or virtualbox] [add or init or none] [malwr or ax or none]`  
 // sys.argv[1] = GUEST VM environment , odoriba support vmware or virtualbox  
 // sys.argv[2] = Setting options  
- 			  init = cuckoo have't launched yet.  
- 			  add = cuckoo launched and add malware seeds via sys.argv[3]  
- 			  none = cuckoo launched and skip add seeds   
+	init = cuckoo have't launched yet.  
+	add = cuckoo launched and add malware seeds via sys.argv[3]  
+	none = cuckoo launched and skip add seeds   
 //sys.argv[3] = Where malware download from   
- 			  malwr = malwr's recent analysis samples 
- 			  ax = your FireEye AX 
- 			  none = skip download and you can submit manually 
+	malwr = malwr's recent analysis samples   
+	ax = your FireEye AX   
+	none = skip download and you can submit manually   
 
 if you batch collect malware seeds, set cron this procedure.  
  `$ python odoriba.py [vmware or virtualbox] add [malwr or ax]`  
@@ -94,6 +94,11 @@ After Cuckoo Sandbox start working, you can submit files and urls to cuckoo's su
   OR   
 Install Cuckoo Sandbox and replace the above [Modified and Created Files] in the cuckoo folder.  
 If you find some errors , please handle by yourself at first.
+Some error may happen because your working directory name still **cuckoo**, please change to **odoriba** or modify odoriba's source code by yourself.  
+
+
+*Recruit-CSIRT does not assume any responsibility about using odoriba.
+**you can use Self-responsibility
 
 ## Licence
 [GPLv3](https://github.com/Recruit-CSIRT/odoriba/blob/master/docs/LICENSE)  
