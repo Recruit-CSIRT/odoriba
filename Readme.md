@@ -92,13 +92,14 @@ After Cuckoo Sandbox start working, you can submit files and urls to cuckoo's su
 ## Install
 [Install Example](https://github.com/Recruit-CSIRT/odoriba/blob/master/Cuckoo_Odoriba_Install.txt)      
   OR   
-Install Cuckoo Sandbox and replace the above [Modified and Created Files] in the cuckoo folder.  
+Install Cuckoo Sandbox and replace the above **[Modified and Created Files]**  in the cuckoo folder.  
 If you find some errors , please handle by yourself at first.  
 Some error may happen because your working directory name still **cuckoo** ,   
 please change to **odoriba** or modify odoriba's source code by yourself.  
 
 
-*Recruit-CSIRT does not assume any responsibility about using odoriba.*
+*Recruit-CSIRT does not assume any responsibility about using odoriba.*    
+
 **you can take advantage on Self-responsibility**
 
 ## Licence
