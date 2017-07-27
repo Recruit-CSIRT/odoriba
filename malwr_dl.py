@@ -2,7 +2,7 @@
 # -*- encoding: utf-8 -*-
 # Copyright (C) 2016- Tatsuya Ichida Recruit Technologies.
 
-# [original] this module is to collect malwares from you FireEye AX 
+# [original] this module is to collect malwares from Malwr (https://malwr.com)
 
 USER_AGENT = "Write your own" 
 BASE64_LOGIN_USER = "Write your own" 
@@ -115,7 +115,7 @@ class Malwr(object):
         if hash256 == sha256: 
             return True
         else: 
-            proc = subprocess.Popen(["rm","-rf","./seeds/%s"%fname])   # hashが合わないものは削除
+            proc = subprocess.Popen(["rm","-rf","./seeds/%s"%fname])   # remove if the sha256 hash does't match.
             out, err = proc.communicate()
             proc.wait()
             return False 
@@ -124,7 +124,7 @@ class Malwr(object):
 
 
 def main(logger):
-    # phase 0: 認証突破
+    # phase 0: account certification 
     username = base64.b64decode(BASE64_LOGIN_USER)
     password = base64.b64decode(BASE64_LOGIN_PASS)
     api_authenticated = Malwr(verbose=True, username=username, password=password,logger=logger)

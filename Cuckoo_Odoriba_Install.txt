@@ -121,7 +121,7 @@ Install Examples.
 
 	# Database Deletion
 	> cuckooDB
-	$ ~/cuckoo/cuckoo.py —-clean
+	$ ~/odoriba/cuckoo.py —-clean
 
 	>Customize DB
 	$ mongo
@@ -135,7 +135,7 @@ Install Examples.
 	http://127.0.0.1:8001
 
 	■ Signature update
-	~/cuckoo/utils/community.py --signatures --force --rewrite 
+	~/odoriba/utils/community.py --signatures --force --rewrite 
 
 
 
