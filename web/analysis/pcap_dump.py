@@ -61,7 +61,7 @@ def pcap_intelligence(list_pcap,rid):
 def analyzer(rid,dict_pindex):
 	try:
 		home = os.path.expanduser('~')
-		pcap_file = '%s/cuckoo/storage/analyses/%s/dump.pcap'%(home,rid)
+		pcap_file = '%s/odoriba/storage/analyses/%s/dump.pcap'%(home,rid)
 	except Exception as e:
 		print e
 

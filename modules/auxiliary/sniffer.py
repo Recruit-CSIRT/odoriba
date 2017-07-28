@@ -15,6 +15,8 @@ from lib.cuckoo.common.abstracts import Auxiliary
 from lib.cuckoo.common.constants import CUCKOO_ROOT, CUCKOO_GUEST_PORT
 
 log = logging.getLogger(__name__)
+# Do not capture Default ICMP src host
+ICMP="Write your own"
 
 class Sniffer(Auxiliary):
     def __init__(self):
@@ -89,7 +91,6 @@ class Sniffer(Auxiliary):
         ####################################################
 
         # Do not capture Default ICMP
-        ICMP="Write your own"
         pargs.extend([
             "and", "not", "(",
             "dst", "host", self.machine.ip, "and",
@@ -162,6 +163,7 @@ class Sniffer(Auxiliary):
             pargs.extend(["and", "(", bpf, ")"])
 
         try:
+            #print pargs
             self.proc = subprocess.Popen(pargs)
         except (OSError, ValueError):
             log.exception(

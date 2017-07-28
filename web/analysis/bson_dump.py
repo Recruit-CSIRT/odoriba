@@ -238,7 +238,10 @@ def bson2dict(log):
     #         (string)<description of the n-th argument>,
     #     ]
     # }
+
 	rbson = re.compile(r'.+bson::{ "I" : (.+), "name" : "(.+)", "type" : "(.+)", "category" : "(.+)", "args" : (.+) }')
+	#if you install python3, use below instead of upper rbson
+	#rbson = re.compile(r'.+bson::{"I":(.+),"name":"(.+)","type":"(.+)","category":"(.+)","args":(.+)}')
 
     # Here's an api object:
     # {
@@ -256,6 +259,8 @@ def bson2dict(log):
     # }	
 
 	rbson2 = re.compile(r'.+bson::{ "I" : (.+), "T" : (.+), "t" : (.+), "h" : (.+), "args" : (.+) }')
+	#if you install python3, use below instead of upper rbson
+	#rbson2 = re.compile(r'.+bson::{"I":(.+),"T":(.+),"t":(.+),"h":(.+),"args":(.+)}')
 
 
 
@@ -280,8 +285,7 @@ def bson2dict(log):
 				dict_bson[lookup_idx]['args_keys'] = expl_raw[4]
 
 		except Exception as e:
-			#print "[[bson regex parse error below]] "
-			#print e
+			print "[[bson regex parse error below]] ", e
 			pass
 	
 	new_list_bson,list_fqdns = behavior_intelligence(dict_bson)
@@ -297,7 +301,7 @@ def except_lsass_process(bson_files):
 		tmp_process = bson.split('/')[-1][:-5]
 		print tmp_process
 		if min_process > int(tmp_process):
-			min_process = tmp_process
+			min_process = int(tmp_process)
 			lsass_bson = bson
 			print lsass_bson
 
@@ -307,7 +311,7 @@ def except_lsass_process(bson_files):
 def main(rid,dict_bindex):
 	try:
 		home = os.path.expanduser('~')
-		bson_files = glob.glob('%s/cuckoo/storage/analyses/%s/logs/*'%(home,rid)) # ワイルドカードが使用可能
+		bson_files = glob.glob('%s/odoriba/storage/analyses/%s/logs/*'%(home,rid)) 
 	except Exception as e:
 		print e
 
@@ -341,7 +345,3 @@ def main(rid,dict_bindex):
 	return dict_bindex,list_bsons
 
 #main("latest",{})
-
-
-
-
