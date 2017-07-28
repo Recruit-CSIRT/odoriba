@@ -122,6 +122,9 @@ Install Examples.
 	# Database Deletion
 	> cuckooDB
 	$ ~/odoriba/cuckoo.py —-clean
+	 if you clean cuckoo db , 
+	 -> please delete /odoriba/web/static/json/* 
+	    and db.dropDatabase() against intel db ,real db 
 
 	>Customize DB
 	$ mongo
@@ -133,6 +136,7 @@ Install Examples.
 	Memo
 	■ Browser
 	http://127.0.0.1:8001
+
 
 	■ Signature update
 	~/odoriba/utils/community.py --signatures --force --rewrite 

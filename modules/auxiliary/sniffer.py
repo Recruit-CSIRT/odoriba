@@ -153,7 +153,7 @@ class Sniffer(Auxiliary):
             ")",                          
         ])  # UDP control traffic 
         
-
+        # please add your own normal traffic ..
 
         ######### to ########################################################################################
  

@@ -3,6 +3,8 @@
 # Copyright (C) 2016- Tatsuya Ichida Recruit Technologies.
 
 # [original] this module is to collect malwares from Malwr (https://malwr.com)
+#  2017~ Malwr implemented Google reCAPTCHA on account authentication
+#  this module cannot handle it. fail.
 
 USER_AGENT = "Write your own" 
 BASE64_LOGIN_USER = "Write your own" 
@@ -124,7 +126,7 @@ class Malwr(object):
 
 
 def main(logger):
-    # phase 0: account certification 
+    # phase 0: account authentication 
     username = base64.b64decode(BASE64_LOGIN_USER)
     password = base64.b64decode(BASE64_LOGIN_PASS)
     api_authenticated = Malwr(verbose=True, username=username, password=password,logger=logger)
