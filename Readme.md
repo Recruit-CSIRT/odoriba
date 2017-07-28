@@ -16,13 +16,13 @@ Operation Check :
 The background and details was presented in FIRST TC Amusterdam 2017   
 https://www.first.org/events/colloquia/amsterdam2017/program#precruit-csirt  
 
-## Demo
-*this demo is captured by develop environment not except normal traffic filter.*
-So these IP addresses are just samples for demo.
-**Launch Demo**
-![launchDemo](https://github.com/Recruit-CSIRT/odoriba/assets/odoriba_demo_1.gif)
-**Real-time View Demo** 
-![realtimeDemo](https://github.com/Recruit-CSIRT/odoriba/assets/odoriba_demo_2.gif)
+## Demo   
+*this demo is captured by develop environment not except normal traffic filter.*   
+So these IP addresses are just samples for demo.   
+**Launch Demo**   
+![launchDemo](https://github.com/Recruit-CSIRT/odoriba/blob/master/assets/odoriba_demo_1.gif)   
+**Real-time View Demo**    
+![realtimeDemo](https://github.com/Recruit-CSIRT/odoriba/blob/master/assets/odoriba_demo_2.gif)   
 
 ## Comparison Cuckoo Sandbox  
 [Cuckoo Sandbox 2.0 rc1](https://cuckoosandbox.org/2016-01-21-cuckoo-sandbox-20-rc1.html) 
