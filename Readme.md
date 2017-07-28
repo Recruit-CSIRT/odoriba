@@ -77,13 +77,13 @@ set your Guest IP in ./internet_control.py (this modules support VirtualBox and 
 `$ python odoriba.py [vmware or virtualbox] [add or init or none] [malwr or ax or none]`  
 // sys.argv[1] = GUEST VM environment , odoriba support vmware or virtualbox  
 // sys.argv[2] = Setting options  
-- init = cuckoo have't launched yet.  
-- add = cuckoo launched and add malware seeds via sys.argv[3]  
-- none = cuckoo launched and skip add seeds   
+> > init = cuckoo have't launched yet.  
+> > add = cuckoo launched and add malware seeds via sys.argv[3]  
+> > none = cuckoo launched and skip add seeds  
 //sys.argv[3] = Where malware download from   
-- malwr = malwr's recent analysis samples *Malwr implemented Google reCAPTCHA, this option doesn't work now.*
-- ax = your FireEye AX   
-- none = skip download and you can submit manually   
+> > malwr = malwr's recent analysis samples *Malwr implemented Google reCAPTCHA, this option doesn't work now.*
+> > ax = your FireEye AX   
+> > none = skip download and you can submit manually   
 
 if you batch collect malware seeds, set cron this procedure.  
  `$ python odoriba.py [vmware or virtualbox] add [malwr or ax]`  
