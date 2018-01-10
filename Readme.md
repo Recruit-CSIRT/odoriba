@@ -19,6 +19,8 @@ https://www.first.org/events/colloquia/amsterdam2017/program#precruit-csirt
 ## Demo   
 *this demo is captured by develop environment not except normal traffic filter.*   
 So these IP addresses are just samples for demo.   
+(realtimeDemo is damaged partially, I recommend to show via GoogleChrome if Demo doesn't work well.)     
+ 
 **Launch Demo**   
 ![launchDemo](https://github.com/Recruit-CSIRT/odoriba/blob/master/assets/odoriba_demo_1.gif)   
 **Real-time View Demo**    
